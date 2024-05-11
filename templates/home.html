@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+    <title>Fishing Discount</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <style>
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product-card {
+            width: calc(45% - 10px); 
+            margin-bottom: 20px; 
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-card:hover {
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card:active {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="#" class="logo-btn"><img src="https://www.fishingdiscount.lv/image/catalog/0001.svg" alt="Fishing Discount" class="logo-img"></a>
+        <div class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+                <a href="makskeres.html" id="makskeres-btn"">Makšķeres</a>
+                <a href="spoles.html" id="spoles-btn"">Spoles</a>
+                <a href="aksesuari.html" id="aksesuari-btn">Aksesuāri</a>
+            </div>
+        </div>
+        <button class="add-to-cart" onclick="navigateToCart()">Cart</button>
+        <input type="text" id="search-bar" placeholder="Search..." class="search-bar">
+
+        <button class="login-btn" onclick="redirectToLogin()">Login/Register</button>
+    </div>
+
+
+<section class="online-store">
+    <div class="product-container">
+        <div class="product-card" id="product1_card" onclick="navigateToProduct()">
+            <img src="https://www.fishingdiscount.lv/image/cache/catalog/Produktu%20bildes/15063_1-800x800.jpg" alt="Militāra dizaina mugursoma Khaki 25L">
+            <h3>Militāra dizaina mugursoma Khaki 25L</h3>
+            <p>Price: €29.99</p>
+        </div>
+        <div class="product-card" id="product2_card" onclick="navigateToProduct()">
+            <img src="https://www.fishingdiscount.lv/image/cache/catalog/Produktu%20bildes/14447_1-800x800.jpg" alt="Cormoran Sportline fīderis 3,9m 50-150g">
+            <h3>Cormoran Sportline fīderis 3,9m 50-150g</h3>
+            <p>Price: €52.00</p>
+        </div>
+        <div class="product-card" id="product3_card" onclick="navigateToProduct()">
+            <img src="https://fireballbeachvolleyball.com/wp-content/uploads/2019/12/Fox.jpg" alt="Polarizētas saulesbrilles">
+            <h3>Polarizētas saulesbrilles</h3>
+            <p>Price: €12.00</p>
+        </div>
+        <div class="product-card" id="product4_card" onclick="navigateToProduct()">
+            <img src="https://www.fishingdiscount.lv/image/cache/catalog/Produktu%20bildes/4263_1-800x800.jpg" alt="Robinson Big Runner 807 spole ar baitrunner un konisko kaseti">
+            <h3>Robinson Big Runner 807 spole ar baitrunner un konisko kaseti</h3>
+            <p>Price: €54.00</p>
+        </div>
+    </div>
+</section>
+
+
+    <div class="general-info">
+        <div class="info-section">
+            <h2>Par mums</h2>
+            <p>Mēs esam veikals ar daudzu gadu pieredzi makšķerēšanas piederumu tirdzniecībā un ļoti lielu preču klāstu..</p>
+        </div>
+        <div class="info-section">
+            <h2>Kontakti</h2>
+            <p>e-pasts: contact@fishingdiscount.lv</p>
+            <p>Telefona nummurs: +371TelNr</p>
+            <p>Adrese: Vienības gatve</p>
+        </div>
+        <div class="info-section">
+            <h2>Klientu serviss</h2>
+            <p>e-pasts: info@fishingdiscount.com</p>
+            <p>Bankas kkas</p>
+            <p>Sūtīšana un sūtījumu atgriešana</p>
+        </div>
+    </div>
+
+
+    <script src="../static/scripts.js"></script>

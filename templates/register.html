@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='register.js') }}"></script>
+
+    <title>Fishing Discount - Register</title>
+    <link rel="stylesheet" href="../static/register_styles.css">
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="#" class="logo-btn"><img src="https://www.fishingdiscount.lv/image/catalog/0001.svg" alt="Fishing Discount" class="logo-img"></a>
+        <div class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+                <a href="makskeres.html" id="makskeres-btn"">Makšķeres</a>
+                <a href="spoles.html" id="spoles-btn"">Spoles</a>
+                <a href="aksesuari.html" id="aksesuari-btn">Aksesuāri</a>
+            </div>
+        </div>
+        <button class="add-to-cart" onclick="navigateToCart()">Cart</button>
+        <input type="text" id="search-bar" placeholder="Search..." class="search-bar">
+
+        <button class="login-btn" onclick="redirectToLogin()">Login/Register</button>
+    </div>
+
+    <!-- Login/Register Form -->
+    <div class="login-form">
+        <h2>Register</h2>
+        <form id="registration-form" action="/register" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+
+    <div class="general-info">
+        <div class="info-section">
+            <h2>Par mums</h2>
+            <p>---Teksts no majaslapas---.</p>
+        </div>
+        <div class="info-section">
+            <h2>Kontakti</h2>
+            <p>e-pasts: contact@fishingdiscount.lv</p>
+            <p>Telefona nummurs: +371TelNr</p>
+            <p>Adrese: Vienības gatve</p>
+        </div>
+        <div class="info-section">
+            <h2>Klientu serviss</h2>
+            <p>e-pasts: info@fishingdiscount.com</p>
+            <p>Bankas kkas</p>
+            <p>Sūtīšana un sūtījumu atgriešana</p>
+        </div>
+    </div>
+
+    <script src="../static/scripts.js"></script>
+    <script src="../static/register.js"></script>
+
+    <script>
+        // Function to redirect to the login page
+        function redirectToLogin() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+
+</html>

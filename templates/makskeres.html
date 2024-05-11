@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    <title>Makšķeres - Fishing Discount</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <style>
+        .product-card:hover {
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card:active {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-bar">
+        <a href="#" class="logo-btn"><img src="https://www.fishingdiscount.lv/image/catalog/0001.svg" alt="Fishing Discount" class="logo-img"></a>
+        <div class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+                <a href="makskeres.html">Makšķeres</a>
+                <a href="spoles.html">Spoles</a>
+                <a href="aksesuari.html" id="aksesuari-btn">Aksesuāri</a>
+            </div>
+        </div>
+        <button class="add-to-cart" onclick="navigateToCart()">Cart</button>
+        <input type="text" id="search-bar" placeholder="Search..." class="search-bar">
+
+        <button class="login-btn" onclick="redirectToLogin()">Login/Register</button>
+    </div>
+
+    <section class="online-store">
+        <div class="product-container">
+seit butu makskerews
+            {% for product in products %}
+            {% if product.category == "Makšķeres" %}
+            <div class="product-card">
+                <img src="{{ product.image }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>Price: {{ product.price }}</p>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="general-info">
+        <div class="info-section">
+            <h2>Par mums</h2>
+            <p>---Teksts no majaslapas---.</p>
+        </div>
+        <div class="info-section">
+            <h2>Kontakti</h2>
+            <p>e-pasts: contact@fishingdiscount.lv</p>
+            <p>Telefona nummurs: +371TelNr</p>
+            <p>Adrese: Vienības gatve</p>
+        </div>
+        <div class="info-section">
+            <h2>Klientu serviss</h2>
+            <p>e-pasts: info@fishingdiscount.com</p>
+            <p>Bankas kkas</p>
+            <p>Sūtīšana un sūtījumu atgriešana</p>
+        </div>
+    </div>
+
+    <script src="../static/scripts.js"></script>
+</body>
+
+</html>
